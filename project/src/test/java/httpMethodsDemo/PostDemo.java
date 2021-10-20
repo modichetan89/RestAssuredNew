@@ -29,7 +29,7 @@ public class PostDemo {
 		//Hit Request and Get Response
 			.post()
 		
-		//Validate Responses
+		//Validate Responsess
 			.then()
 			.log()
 			.all()
