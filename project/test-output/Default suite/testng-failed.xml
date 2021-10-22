@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Miscellaneous.RequestSpecificationDemo">
+      <class name="Miscellaneous.HeaderOverwriteWithRequestSpecification">
         <methods>
-          <include name="updateBooking"/>
-          <include name="setUpReqSpec"/>
-          <include name="createBooking"/>
+          <include name="overWriteHeaderOfReqSpec"/>
         </methods>
-      </class> <!-- Miscellaneous.RequestSpecificationDemo -->
+      </class> <!-- Miscellaneous.HeaderOverwriteWithRequestSpecification -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
