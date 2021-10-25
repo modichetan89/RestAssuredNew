@@ -13,8 +13,6 @@ public class BaseClass {
 		System.out.println("In setup method");
 		RestAssured.requestSpecification=RestAssured.given().log().all().contentType(ContentType.JSON);
 		RestAssured.responseSpecification=RestAssured.expect().statusCode(200);
-		//changes in feature1
-		//one more change 
 	}
 	
 	

@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Miscellaneous.HeaderOverwriteWithRequestSpecification">
+      <class name="jsonPath.Basics">
         <methods>
-          <include name="overWriteHeaderOfReqSpec"/>
+          <include name="basicTest"/>
         </methods>
-      </class> <!-- Miscellaneous.HeaderOverwriteWithRequestSpecification -->
+      </class> <!-- jsonPath.Basics -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -24,7 +24,7 @@ public class PostDemo {
 				+ "    },\r\n"
 				+ "    \"additionalneeds\" : \"Breakfast\"\r\n"
 				+ "}")
-			.contentType(ContentType.JSON)
+			.contentType(ContentType.XML)
 		
 		//Hit Request and Get Response
 			.post()
