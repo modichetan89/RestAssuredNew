@@ -1,0 +1,122 @@
+Websites to refer
+https://json-schema.org/
+https://www.liquid-technologies.com/online-json-to-schema-converter
+https://www.jsonschemavalidator.net/
+
+Sample Json -
+{
+	"name":"Chetan",
+    "age":30,
+  	"mobile":"8792547525"
+}
+
+Default Schema -
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "mobile": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "age",
+    "mobile"
+  ]
+}
+
+
+Schema with validations on integer min/max and string length
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer",
+        "minimum":30,
+        "maximum":50
+    },
+    "mobile": {
+      "type": "string",
+      "minLength":10
+    }
+  },
+  "required": [
+    "name",
+    "age",
+    "mobile"
+  ]
+}
+
+
+
+JSON with Array
+[
+  {
+	"name":"Chetan",
+    "age":30,
+  	"mobile":"8792547525"
+},
+{
+	"name":"Chetan",
+    "age":30,
+  	"mobile":"8792547525"
+}
+]
+
+
+Schema for ArrayJSON
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "mobile": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "age",
+        "mobile"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "mobile": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "age",
+        "mobile"
+      ]
+    }
+  ]
+}

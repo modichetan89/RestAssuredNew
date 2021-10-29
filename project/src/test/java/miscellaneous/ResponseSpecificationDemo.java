@@ -1,30 +1,33 @@
-package Miscellaneous;
+package miscellaneous;
 
+import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
-public class RequestSpecificationDemo {
+public class ResponseSpecificationDemo {
 	
-	RequestSpecification requestSpecification;
+	ResponseSpecification responseSpecification;
 	
 	@BeforeClass
 	public void setUpReqSpec() {
-		requestSpecification = RestAssured.given();
-		requestSpecification
-			.log().all()
-			.baseUri("https://restful-booker.herokuapp.com/")
-			.contentType(ContentType.JSON);
+		responseSpecification = RestAssured.expect();
+		responseSpecification
+			.statusCode(200)
+			.contentType(ContentType.JSON)
+			.time(Matchers.lessThan(5000L));	
 	}
 	
 	@Test
 	public void createBooking() {
 		RestAssured
 		.given()
-			.spec(requestSpecification)
+			.log().all()
+			.baseUri("https://restful-booker.herokuapp.com/")
+			.contentType(ContentType.JSON)
 			.basePath("booking")
 			.body("{\r\n"
 					+ "    \"firstname\" : \"Jim\",\r\n"
@@ -40,14 +43,17 @@ public class RequestSpecificationDemo {
 		.when()
 			.post()
 		.then()
-			.statusCode(200);
+			.log().all()
+			.spec(responseSpecification);
 	}
 	
 	@Test
 	public void updateBooking() {
 		RestAssured
 		.given()
-			.spec(requestSpecification)
+			.log().all()
+			.baseUri("https://restful-booker.herokuapp.com/")
+			.contentType(ContentType.JSON)
 			.basePath("booking/1")
 			.header("Authorization","Basic YWRtaW46cGFzc3dvcmQxMjM=")
 			.body("{\r\n"
@@ -64,9 +70,8 @@ public class RequestSpecificationDemo {
 		.when()
 			.put()
 		.then()
-			.log()
-			.all()
-			.statusCode(200);			
+			.log().all()
+			.spec(responseSpecification);			
 	}
 
 }

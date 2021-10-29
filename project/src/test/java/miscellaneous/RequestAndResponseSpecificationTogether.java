@@ -1,4 +1,4 @@
-package Miscellaneous;
+package miscellaneous;
 
 import org.hamcrest.Matchers;
 import org.testng.annotations.BeforeClass;

@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="jsonPath.jsonPathForComplexJsonArray2">
+      <class name="jsonSchema.ValidateAnyJSONSchema">
         <methods>
-          <include name="complexJsonArray"/>
+          <include name="validateJSONSchema"/>
         </methods>
-      </class> <!-- jsonPath.jsonPathForComplexJsonArray2 -->
+      </class> <!-- jsonSchema.ValidateAnyJSONSchema -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

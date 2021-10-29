@@ -1,4 +1,4 @@
-package Miscellaneous;
+package miscellaneous;
 
 //User A changes
 //User B from github
