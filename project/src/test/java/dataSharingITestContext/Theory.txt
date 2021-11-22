@@ -1,0 +1,23 @@
+ITestContext is an interface which extends another interface IAttribute 
+IAttribute interface have two important methods setAttribute and getAttribute
+
+We can only share the the data in between the classes which are present inside the same <test> 
+tag in testng.xml.
+
+If we have one class with set attribute method present in <test> name ="one" </test> and 
+one class with get attribute method is present in <test> name="two" </test>. 
+Then we will get null as value.
+
+Both classes should be present in same test tag in order to share data.
+
+<Classes> tag in testNG.xml files run the classes in sequence in which they are written.
+
+
+If we need to share the data between classes present in different test tag, 
+then we have to use ISuite method "getSuite()"    --> context.getSuite().getAttribute("","");
+Rest other context is the variable name for ITestContext interface.
+getAttribute() method is from IAttribute interface.
+getSuite() method is from ISuite interface
+
+
+
