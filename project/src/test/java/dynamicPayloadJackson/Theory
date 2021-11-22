@@ -1,0 +1,50 @@
+We need jackson-databind dependency to work with jackson
+
+/src/test/resources -> Create a folder payloads to store json files.
+
+Create a pojo class for stored json
+
+Our objective is to convert the json into java object and pass the updated values.
+
+ObjectMapper class helps to convert object to json and vice-versa.
+
+First need to create object of ObjectMapper class
+
+Then call the method readValue of objectMapper class. it takes two argument
+1. constructor of file with argument as json file path
+2. POJO class name.class
+
+Then we can store the return type into reference variable of POJO class.
+
+Using this variable we can call pojo getters and setters.
+
+We can set value at run time
+
+We can pass this updated POJO object to payload argument if required dynamic request.
+	
+It will not update our actual stored json.	
+
+Also using ObjectMapper class writeValueAsString() method which takes argument as pojo,
+we can convert pojo to pretty string and pass that string to actual body.
+
+
+
+Update Json Without Pojo
+Here in readValue of objectmapper class instead of passing second argument as POJO.class
+We will pass TypeReference anonymous class with generics as <Map<String, Object>>.
+We can store the return value in variable of type Map<String, Object>
+
+Using this variable we can perform Map actions like, get, put, remove etc on json.
+
+Then using objectMapper writeWithDefaultPrettyprinter followed by writevalueAsString we can convert json to string
+
+This we can pass in our actual RestAssured payload, also we can pass Map object directly.
+
+
+
+
+
+
+
+
+
